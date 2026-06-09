@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexfort Asesores</title>
+    <link rel="icon" type="image/png" href="assets/Iconos/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="logo">
+        <span class="mk"
+          ><div class="logo-superior">
+            <img src="assets/Iconos/logo.png" alt="Logo Empresa" />
+          </div>
+        </span>
+      </div>
+      <ul class="navlinks">
+        <li><a href="#firma">LA FIRMA</a></li>
+        <li><a href="#practicas">PRÁCTICAS</a></li>
+        <li><a href="#profesionales">PROFESIONALES</a></li>
+        <li><a href="#contacto" class="active">CONTACTO</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#firma">LA FIRMA</a>
+      <a href="#practicas">PRÁCTICAS</a>
+      <a href="#profesionales">PROFESIONALES</a>
+      <a href="#contacto">CONTACTO</a>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero" id="firma">
+      <div class="hero-slider" id="heroSlider">
+        <div class="hero-track" id="heroTrack">
+          <div class="hero-slide">
+            <img src="assets/hero-building.jpg" alt="Edificio corporativo" />
+          </div>
+          <div class="hero-slide">
+            <img
+              src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=80"
+              alt="Arquitectura corporativa"
+            />
+          </div>
+          <div class="hero-slide">
+            <img
+              src="assets/practice-architecture.jpg"
+              alt="Edificio de oficinas"
+            />
+          </div>
+        </div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <h1 id="heroTitle">Una firma construida desde la experiencia corporativa
+        </h1>
+        <div class="divider rv"></div>
+        <p class="sub rv">
+          <b>Derecho corporativo</b> con visión de negocio para
+          <b>decisiones de alto impacto.</b>
+        </p>
+        <a href="#contacto" class="hero-btn rv">CONTACTAR A UN EXPERTO</a>
+      </div>
+      <div class="hero-dots" id="heroDots"></div>
+    </header>
+
+    <!-- STATS -->
+    <section class="stats">
+      <h2 class="rv">Generando valor para nuestros clientes</h2>
+      <div class="stats-grid">
+        <div class="stat rv">
+          <div class="num"><span class="count" data-target="15">0</span>+</div>
+          <div class="t">Años de experiencia</div>
+          <div class="d">combinada in-house de nuestros socios.</div>
+        </div>
+        <div class="stat rv">
+          <div class="num"><span class="count" data-target="20">0</span>+</div>
+          <div class="t">Empresas acompañadas</div>
+          <div class="d">en decisiones estratégicas.</div>
+        </div>
+        <div class="stat rv">
+          <div class="num"><span class="count" data-target="50">0</span>+</div>
+          <div class="t">Proyectos gestionados</div>
+          <div class="d">en diversos sectores e industrias clave.</div>
+        </div>
+        <div class="stat rv">
+          <div class="num"><span class="count" data-target="8">0</span></div>
+          <div class="t">Áreas de práctica</div>
+          <div class="d">
+            Una visión integral del negocio: Corporativo, Laboral, Tributario y
+            Asuntos Públicos.
+          </div>
+        </div>
+      </div>
+      <div class="clients">
+        <img src="assets/logo-avianca.png" alt="Avianca" class="logoAvianca" />
+        <img src="assets/logo-sky.png" alt="Sky" class="logoSky" />
+        <img src="assets/logo-equimag.png" alt="Equimag" class="logoEquipag" />
+        <img src="assets/logo-davissa.png" alt="Davissa" class="logoDavissa" />
+      </div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="banner">
+      <div class="banner-inner rv">
+        <h3>
+          Desde 2011, <b>acompañando el crecimiento,</b> la protección y la
+          proyección de empresas, personas, patrimonios e inversiones.
+        </h3>
+      </div>
+    </section>
+
+    <!-- PURPOSE -->
+    <section class="purpose">
+      <div class="purpose-text rv">
+        <h2>Nuestro propósito</h2>
+        <p>
+          <b>LEXFORT nace de una convicción:</b> los mejores asesores legales no
+          son solo expertos en derecho, sino profesionales que
+          <b>entienden el negocio desde adentro.</b>
+        </p>
+        <p>
+          Nuestros socios vienen del mundo corporativo, conocen las urgencias
+          operativas, el lenguaje de los directorios y los desafíos reales de
+          las empresas.
+        </p>
+        <p><b>Esa experiencia es nuestra mayor ventaja.</b></p>
+      </div>
+      <img class="purpose-img" src="assets/purpose-walk.jpg" />
+    </section>
+
+    <!-- DIFERENCIALES -->
+    <section class="diff">
+      <h2 class="rv">Nuestros diferenciales</h2>
+      <div class="diff-wrap">
+        <div class="diff-heads">
+          <div class="diff-head rv">
+            <span class="ic">
+              <img
+                src="assets/Iconos/objetivo-icono.svg"
+                alt="Visión Corporativa"
+              />
+            </span>
+            <h4>Visión<br />Corporativa</h4>
+          </div>
+          <div class="diff-head h2pos"></div>
+          <div class="diff-head rv" style="justify-content: flex-end">
+            <span class="ic">
+              <img src="assets/Iconos/atencion.svg" alt="Atención Boutique" />
+            </span>
+            <h4>Atención<br />Boutique</h4>
+          </div>
+        </div>
+        <div class="diff-line">
+          <div class="diff-circle rv">1</div>
+          <div class="diff-circle rv">2</div>
+          <div class="diff-circle rv">3</div>
+        </div>
+        <div class="diff-bodies">
+          <div class="diff-body rv">
+            <h5 class="m-title">Visión Corporativa</h5>
+            <p>
+              Somos abogados con experiencia dentro del mundo corporativo.
+              Conocemos de cerca cómo operan las organizaciones, cómo se toman
+              las decisiones y cuáles son los desafíos que enfrentan. Por eso,
+              nuestro asesoramiento combina criterio legal y visión estratégica
+              de negocio.
+            </p>
+          </div>
+          <div class="diff-body mid rv">
+            <h5>Ejecución precisa</h5>
+            <p>
+              Cada caso requiere precisión y velocidad. Nuestro equipo responde
+              con la agilidad de una firma boutique y el rigor de los mejores
+              estudios del mercado. Sin burocracia, sin intermediarios.
+            </p>
+          </div>
+          <div class="diff-body rv">
+            <h5 class="m-title">Atención Boutique</h5>
+            <p>
+              Nuestros socios se encuentran en cada etapa del proceso,
+              construyendo relaciones cercanas, ofreciendo un acompañamiento
+              directo y comprometido.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS -->
+    <section class="areas" id="practicas">
+      <h2 class="rv">Áreas de práctica</h2>
+      <div class="areas-inner">
+        <ul class="areas-list rv">
+          <li class="active" data-area="0">
+            Corporativo <span class="ar">→</span>
+          </li>
+          <li data-area="1">
+            Laboral &amp; Gestión de Personas <span class="ar">→</span>
+          </li>
+          <li data-area="2">Tributario <span class="ar">→</span></li>
+          <li data-area="3">Asuntos Públicos <span class="ar">→</span></li>
+          <li data-area="4">Aeronáutico <span class="ar">→</span></li>
+          <li data-area="5">Industrias <span class="ar">→</span></li>
+        </ul>
+        <div class="area-panel rv">
+          <div class="pbg">
+            <img
+              id="areaImg"
+              src="assets/arte_Corporativo.png"
+              alt=""
+            />
+          </div>
+          <div class="pc">
+            <h3 id="areaTitle">Corporativo</h3>
+            <div class="uline"></div>
+            <p id="areaDesc">
+              Acompañamiento en estructuras societarias, reorganizaciones
+              empresariales, fusiones, adquisiciones y operaciones corporativas
+              complejas.
+            </p>
+            <div class="conv">CONVERSEMOS &nbsp;&gt;</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONALS -->
+    <section class="pros" id="profesionales">
+      <h2 class="rv">Profesionales</h2>
+      <div class="pros-stage">
+        <span class="pros-arrow" id="prosPrev" aria-label="Anterior"
+          >&#8249;</span
+        >
+        <div class="pros-viewport">
+          <div class="pros-grid" id="prosTrack">
+            <div class="pro rv">
+              <div class="photo">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80"
+                  alt="Renzo Nacarino"
+                />
+              </div>
+              <div class="name-row">
+                <div>
+                  <h4>Renzo Nacarino Di Tolla</h4>
+                  <div class="role">Socio Fundador</div>
+                </div>
+              </div>
+              <div class="meta">
+                Aeronáutico · Corporativo · M&amp;A · Contratos<br />Trayectoria
+                in-house en empresas líderes como Avianca y SKY.<br /><a
+                  href="mailto:renzo.nacarino@lexfortasesores.com"
+                  >renzo.nacarino@lexfortasesores.com</a
+                ><br /><a href="tel:+51994890343">+51 994 890 343</a>
+              </div>
+              <div class="li"><img src="assets/iconos/linkedin.png" alt="LinkedIn" /></div>
+            </div>
+            <div class="pro rv">
+              <div class="photo">
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80"
+                  alt="Martin Candela"
+                />
+              </div>
+              <div class="name-row">
+                <div>
+                  <h4>Martin Candela</h4>
+                  <div class="role">Socio</div>
+                </div>
+              </div>
+              <div class="meta">
+                Corporativo · Laboral · M&amp;A<br />Visión estratégica de
+                negocio.<br /><a
+                  href="mailto:martin.candela@lexfortasesores.com"
+                  >martin.candela@lexfortasesores.com</a
+                ><br /><a href="tel:+51940435976">+51 940 435 976</a>
+              </div>
+              <div class="li"><br><img src="assets/iconos/linkedin.png" alt="LinkedIn" /></div>
+            </div>
+            <div class="pro rv">
+              <div class="photo">
+                <img
+                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=700&q=80"
+                  alt="Andrés de Vinatea"
+                />
+              </div>
+              <div class="name-row">
+                <div>
+                  <h4>Andrés de Vinatea</h4>
+                  <div class="role">Socio</div>
+                </div>
+              </div>
+              <div class="meta">
+                Procesal Civil · Comercial<br />Encabeza una nueva línea de
+                especialización en controversias civiles y comerciales.<br /><a
+                  href="mailto:andresdevinatea@lexfortasesores.com"
+                  >andresdevinatea@lexfortasesores.com</a
+                ><br /><a href="tel:+51943464247">+51 943 464 247</a>
+              </div>
+              <div class="li"><img src="assets/iconos/linkedin.png" alt="LinkedIn" /></div>
+            </div>
+          </div>
+        </div>
+        <span class="pros-arrow" id="prosNext" aria-label="Siguiente"
+          >&#8250;</span
+        >
+      </div>
+      <div class="pros-dots" id="prosDots"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contacto">
+      <div
+        class="cbg"
+        style="background-image: url(&quot;assets/contact-meeting.jpg&quot;)"
+      ></div>
+      <h2 class="rv">
+        Hablemos sobre cómo transformar <br />desafíos legales en oportunidades
+        <br />para tu negocio.
+      </h2>
+      <div class="contact-inner">
+        <form class="form" onsubmit="return false;">
+          <div class="field rv">
+            <label>Nombres y Apellidos</label
+            ><input type="text" placeholder="Escribe tus datos completos." />
+          </div>
+          <div class="field rv">
+            <label>Empresa</label
+            ><input type="text" placeholder="Escribe tu empresa." />
+          </div>
+          <div class="field rv">
+            <label>Correo Empresarial</label
+            ><input type="email" placeholder="Escribe tu correo empresarial." />
+          </div>
+          <div class="field rv">
+            <label>Mensaje</label
+            ><textarea placeholder="Escribe tu mensaje aquí."></textarea>
+          </div>
+          <button class="send rv">ENVIAR &nbsp;→</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="foot-inner">
+        <div class="logo">
+          <span class="mk">
+            <div class="logo-superior">
+              <img src="assets/Iconos/logo.png" alt="Logo Empresa" /></div
+          ></span>
+        </div>
+        <div class="foot-meta">
+          Av. Aviación Nº 2540, Piso 3<br />San Borja, Lima<br />Perú
+          <div class="mail">contacto@lexfort.pe</div>
+        </div>
+        <a class="foot-li" href="#">Linked<span class="b">in</span></a>
+        <div class="logo-personal">
+          <div class="logo-content">
+            <div class="logo-text">Powered by</div>
+            <img src="assets/Iconos/lemdestudio.png" alt="Mi Logo" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
