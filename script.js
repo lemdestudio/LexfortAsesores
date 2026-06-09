@@ -423,3 +423,17 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
   buildDots();
   update();
 })();
+
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const msg = document.getElementById('formMsg');
+  const btn = this.querySelector('.send');
+  btn.disabled = true; msg.textContent = 'Enviando…';
+  try {
+    const res = await fetch('mailservice.php', { method:'POST', body: new FormData(this) });
+    const data = await res.json();
+    if (data.ok) { msg.textContent = '¡Gracias! Tu mensaje fue enviado.'; this.reset(); }
+    else { msg.textContent = data.error || 'No se pudo enviar. Inténtalo de nuevo.'; }
+  } catch { msg.textContent = 'Error de conexión. Inténtalo más tarde.'; }
+  btn.disabled = false;
+});

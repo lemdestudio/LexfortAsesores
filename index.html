@@ -333,24 +333,25 @@
         <br />para tu negocio.
       </h2>
       <div class="contact-inner">
-        <form class="form" onsubmit="return false;">
+        <form id="contactForm" class="form">
           <div class="field rv">
-            <label>Nombres y Apellidos</label
-            ><input type="text" placeholder="Escribe tus datos completos." />
+            <label>Nombres y Apellidos</label>
+            <input type="text" name="nombre" required placeholder="Escribe tus datos completos.">
           </div>
           <div class="field rv">
-            <label>Empresa</label
-            ><input type="text" placeholder="Escribe tu empresa." />
+            <label>Empresa</label>
+            <input type="text" name="empresa" placeholder="Escribe tu empresa.">
           </div>
           <div class="field rv">
-            <label>Correo Empresarial</label
-            ><input type="email" placeholder="Escribe tu correo empresarial." />
+            <label>Correo Empresarial</label>
+            <input type="email" name="correo" required placeholder="Escribe tu correo empresarial.">
           </div>
           <div class="field rv">
-            <label>Mensaje</label
-            ><textarea placeholder="Escribe tu mensaje aquí."></textarea>
+            <label>Mensaje</label>
+            <textarea name="mensaje" required placeholder="Escribe tu mensaje aquí."></textarea>
           </div>
-          <button class="send rv">ENVIAR &nbsp;→</button>
+          <button type="submit" class="send rv">ENVIAR &nbsp;→</button>
+          <p id="formMsg" style="color:#fff;margin-top:14px;font-weight:300"></p>
         </form>
       </div>
     </section>
