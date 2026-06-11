@@ -454,9 +454,38 @@ nav.scrolled .logo-superior {
     border-radius: 5px
 }
 
+
+
 @media(max-width:900px) {
     .hero h1 {
         max-width: 100%
+    }
+
+    .hero,
+    .stats,
+    .banner,
+    .purpose,
+    .diff,
+    .areas,
+    .pros,
+    .contact,
+    footer {
+        width: 110%;
+    }
+}
+
+@media(max-width:815px) {
+
+    .hero,
+    .stats,
+    .banner,
+    .purpose,
+    .diff,
+    .areas,
+    .pros,
+    .contact,
+    footer {
+        width: 117%;
     }
 }
 
@@ -688,7 +717,7 @@ nav.scrolled .logo-superior {
 
 /* ===== DIFERENCIALES ===== */
 .diff {
-        background: linear-gradient(to top, #d7d7d738, #f2f2f2);
+    background: linear-gradient(to top, #d7d7d738, #f2f2f2);
     padding: 60px 64px 130px
 }
 
@@ -699,8 +728,7 @@ nav.scrolled .logo-superior {
     margin-bottom: 90px
 }
 
-.diff-wrap {
-    max-width: 1080px;
+.diff-wrap { 
     margin: 0 auto;
     position: relative
 }
@@ -714,7 +742,8 @@ nav.scrolled .logo-superior {
 .diff-head {
     display: flex;
     align-items: center;
-    gap: 14px
+    gap: 14px;
+    justify-content: center;
 }
 
 .diff-head .ic {
@@ -806,7 +835,7 @@ nav.scrolled .logo-superior {
     color: var(--gray-text)
 }
 
-@media(max-width:640px) {
+@media(max-width:767px) {
     .diff-heads {
         display: none
     }
@@ -845,7 +874,7 @@ nav.scrolled .logo-superior {
         position: relative;
         width: 52px;
         height: 52px;
-        font-size: 0;
+        font-size: 1.02rem;;
         justify-self: center;
         align-self: start;
         z-index: 1;
@@ -854,7 +883,7 @@ nav.scrolled .logo-superior {
     }
 
     .diff-circle::after {
-        font-size: 1.02rem;
+        font-size: 1.5rem;
         font-weight: 600;
         color: #fff
     }
@@ -966,9 +995,9 @@ nav.scrolled .logo-superior {
     transition: .4s
 }
 
-.areas-list li.active, 
-.areas-list li.active .ar, 
-.areas-list li:hover .ar{
+.areas-list li.active,
+.areas-list li.active .ar,
+.areas-list li:hover .ar {
     color: var(--gold);
     padding-left: 14px
 }
@@ -995,7 +1024,7 @@ nav.scrolled .logo-superior {
 .area-panel .pbg img {
     position: absolute;
     top: 0;
-    left: 0; 
+    left: 0;
     height: 100%;
     object-fit: cover;
     opacity: .5;
@@ -1068,13 +1097,11 @@ nav.scrolled .logo-superior {
     font-weight: 600;
     font-size: clamp(1.8rem, 3.6vw, 2.7rem);
     margin-bottom: 50px;
-    max-width: 1180px;
-    margin-left: auto;
-    margin-right: auto
+    padding-left: 3%;
 }
 
 .pros-stage {
-    max-width: 1180px;
+    padding: 0px 120px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -1113,8 +1140,8 @@ nav.scrolled .logo-superior {
 }
 
 .pro {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 var(--pro-w, 50%);
+    max-width: var(--pro-w, 50%);
     padding: 0 25px;
     box-sizing: border-box
 }
@@ -1165,16 +1192,10 @@ nav.scrolled .logo-superior {
     text-decoration: underline
 }
 
-
-
-.pro .li img {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-    vertical-align: middle;
-    opacity: 0.4;
-    margin-top: 20px;
-    margin-left: 19px;
+.pro .li {
+    margin: 14px 0 0 19px;
+    color: #aab0b8;
+    font-size: 1.2rem
 }
 
 .pros-dots {
@@ -1203,10 +1224,21 @@ nav.scrolled .logo-superior {
 
 @media(max-width:760px) {
     .pro {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding: 0
+        padding: 10px;
     }
+}
+@media(max-width:900px) {
+    .pros-stage {
+        padding: 0px 30px;
+    }
+    
+}
+
+@media(max-width:1500px) {
+    .pros-stage {
+        padding: 0px 15px;
+    }
+    
 }
 
 /* ===== CONTACT ===== */

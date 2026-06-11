@@ -351,8 +351,20 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
   const dotsWrap = document.getElementById("prosDots");
   let index = 0;
 
-  const perView = () => (window.innerWidth <= 760 ? 1 : 2);
+  function perView() {
+    const w = window.innerWidth;
+    let n;
+    if (w <= 800)
+      n = 1;
+    else if (w <= 1200)
+      n = 2; 
+    else n = 3; 
+    return Math.min(n, slides.length);
+  }
   const maxIndex = () => Math.max(0, slides.length - perView());
+  function applyWidth() {
+    track.style.setProperty("--pro-w", 100 / perView() + "%");
+  }
 
   function buildDots() {
     dotsWrap.innerHTML = "";
@@ -371,6 +383,10 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
     );
     prev.classList.toggle("disabled", index <= 0);
     next.classList.toggle("disabled", index >= maxIndex());
+    const noNav = maxIndex() === 0; // todo cabe en una vista
+    prev.style.display = noNav ? "none" : "";
+    next.style.display = noNav ? "none" : "";
+    dotsWrap.style.display = noNav ? "none" : "";
   }
   function goTo(i) {
     index = Math.min(Math.max(i, 0), maxIndex());
@@ -414,26 +430,41 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
     const pv = perView();
     if (pv !== lastPV) {
       lastPV = pv;
+      applyWidth();
       buildDots();
       index = Math.min(index, maxIndex());
     }
     update();
   });
 
+  applyWidth();
   buildDots();
   update();
 })();
 
-document.getElementById('contactForm').addEventListener('submit', async function(e){
-  e.preventDefault();
-  const msg = document.getElementById('formMsg');
-  const btn = this.querySelector('.send');
-  btn.disabled = true; msg.textContent = 'Enviando…';
-  try {
-    const res = await fetch('mailservice.php', { method:'POST', body: new FormData(this) });
-    const data = await res.json();
-    if (data.ok) { msg.textContent = '¡Gracias! Tu mensaje fue enviado.'; this.reset(); }
-    else { msg.textContent = data.error || 'No se pudo enviar. Inténtalo de nuevo.'; }
-  } catch { msg.textContent = 'Error de conexión. Inténtalo más tarde.'; }
-  btn.disabled = false;
-});
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const msg = document.getElementById("formMsg");
+    const btn = this.querySelector(".send");
+    btn.disabled = true;
+    msg.textContent = "Enviando…";
+    try {
+      const res = await fetch("mailservice.php", {
+        method: "POST",
+        body: new FormData(this),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        msg.textContent = "¡Gracias! Tu mensaje fue enviado.";
+        this.reset();
+      } else {
+        msg.textContent =
+          data.error || "No se pudo enviar. Inténtalo de nuevo.";
+      }
+    } catch {
+      msg.textContent = "Error de conexión. Inténtalo más tarde.";
+    }
+    btn.disabled = false;
+  });
