@@ -460,33 +460,6 @@ nav.scrolled .logo-superior {
     .hero h1 {
         max-width: 100%
     }
-
-    .hero,
-    .stats,
-    .banner,
-    .purpose,
-    .diff,
-    .areas,
-    .pros,
-    .contact,
-    footer {
-        width: 110%;
-    }
-}
-
-@media(max-width:815px) {
-
-    .hero,
-    .stats,
-    .banner,
-    .purpose,
-    .diff,
-    .areas,
-    .pros,
-    .contact,
-    footer {
-        width: 117%;
-    }
 }
 
 /* ===== STATS ===== */
