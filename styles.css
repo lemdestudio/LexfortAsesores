@@ -1116,7 +1116,10 @@ nav.scrolled .logo-superior {
     flex: 0 0 var(--pro-w, 50%);
     max-width: var(--pro-w, 50%);
     padding: 0 25px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pro .photo {
@@ -1169,6 +1172,11 @@ nav.scrolled .logo-superior {
     margin: 14px 0 0 19px;
     color: #aab0b8;
     font-size: 1.2rem
+}
+
+
+.pro .li img{
+    width: 24px;
 }
 
 .pros-dots {
