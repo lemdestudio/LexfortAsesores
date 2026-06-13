@@ -566,6 +566,7 @@ nav.scrolled .logo-superior {
 }
 
 .logoAvianca {
+    filter: invert(33%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(93%) contrast(89%);
     width: 180px;
     height: auto;
 }
@@ -582,6 +583,18 @@ nav.scrolled .logo-superior {
 
 .logoDavissa {
     width: 180px;
+    height: auto;
+}
+
+.logoCristobal{
+    filter: invert(33%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(93%) contrast(89%);
+ width: 180px;
+    height: auto;
+}
+
+.logoFracht{
+    filter: invert(33%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(93%) contrast(89%);
+ width: 180px;
     height: auto;
 }
 
@@ -639,7 +652,7 @@ nav.scrolled .logo-superior {
 
 /* ===== BANNER ===== */
 .banner {
-    background-image: url(assets/map-world.jpg);
+    background-image: url(assets/backgrounds/map-world.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1044,7 +1057,7 @@ nav.scrolled .logo-superior {
 .area-panel .pc {
     position: relative;
     z-index: 1;
-    margin-left: 42%
+    margin-left: 20%
 }
 
 .area-panel h3 {
@@ -1238,6 +1251,7 @@ nav.scrolled .logo-superior {
     border-radius: 5px
 }
 
+
 @media(max-width:760px) {
     .pro {
         padding: 10px;
@@ -1258,6 +1272,11 @@ nav.scrolled .logo-superior {
 
 }
 
+@media (min-width: 760px) and (max-width: 900px) { 
+    .aemail{ 
+        overflow-wrap: break-word;
+    }
+}
 /* ===== CONTACT ===== */
 .contact {
     position: relative;

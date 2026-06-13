@@ -181,32 +181,32 @@ const areas = [
   [
     "Corporativo",
     "Acompañamiento en estructuras societarias, reorganizaciones empresariales, fusiones, adquisiciones y operaciones corporativas complejas.",
-    "assets/arte_Corporativo.png",
+    "assets/backgrounds/arte_Corporativo.png",
   ],
   [
     "Laboral & Gestión de Personas",
     "Asesoría estratégica en relaciones laborales, gestión de personal, cumplimiento normativo, negociación y prevención de contingencias laborales.",
-    "assets/arte_Laboral.png",
+    "assets/backgrounds/arte_Laboral.png",
   ],
   [
     "Tributario",
     "Planeamiento tributario, asesoría fiscal corporativa y acompañamiento en procedimientos ante la administración tributaria.",
-    "assets/arte_Tributario.png",
+    "assets/backgrounds/arte_Tributario.png",
   ],
   [
     "Asuntos Públicos",
     "Asesoría en relacionamiento institucional, regulación, gestión de intereses y análisis del entorno regulatorio.",
-    "assets/arte_AsuntosP.png",
+    "assets/backgrounds/arte_AsuntosP.png",
   ],
   [
     "Aeronáutico",
     "Asesoría especializada para empresas del sector aeronáutico, operadores, proveedores y actores vinculados a la industria aérea.",
-    "assets/arte_Aero.png",
+    "assets/backgrounds/arte_Aero.png",
   ],
   [
     "Industrias",
     "Especialistas en sectores que demandan conocimiento regulatorio, visión estratégica y experiencia práctica.",
-    "assets/arte_Industrias.png",
+    "assets/backgrounds/arte_Industrias.png",
   ],
 ];
 /* preload images for seamless fades */
