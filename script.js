@@ -341,6 +341,14 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
   start();
 })();
 
+/* ===== CLIENTS INFINITE MARQUEE ===== */
+(function () {
+  const track = document.getElementById("clientsTrack");
+  if (!track) return;
+  const originals = Array.from(track.children);
+  originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+})();
+
 /* ===== PROFESSIONALS CAROUSEL (independent of GSAP) ===== */
 (function () {
   const track = document.getElementById("prosTrack");
@@ -354,11 +362,9 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
   function perView() {
     const w = window.innerWidth;
     let n;
-    if (w <= 800)
-      n = 1;
-    else if (w <= 1200)
-      n = 2; 
-    else n = 3; 
+    if (w <= 800) n = 1;
+    else if (w <= 1200) n = 2;
+    else n = 3;
     return Math.min(n, slides.length);
   }
   const maxIndex = () => Math.max(0, slides.length - perView());
@@ -383,7 +389,7 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
     );
     prev.classList.toggle("disabled", index <= 0);
     next.classList.toggle("disabled", index >= maxIndex());
-    const noNav = maxIndex() === 0; // todo cabe en una vista
+    const noNav = maxIndex() === 0;
     prev.style.display = noNav ? "none" : "";
     next.style.display = noNav ? "none" : "";
     dotsWrap.style.display = noNav ? "none" : "";

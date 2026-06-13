@@ -379,8 +379,20 @@ nav.scrolled .logo-superior {
     position: relative;
     z-index: 3;
     margin: 0 auto;
-    padding: 0 128px;
+    padding: 120px 64px 90px 120px;
     width: 100%
+}
+
+@media(max-height:680px) {
+    .hero {
+        align-items: flex-start !important;
+        min-height: auto
+    }
+
+    .hero-inner {
+        padding-top: 170px;
+        padding-bottom: 60px
+    }
 }
 
 .hero h1 {
@@ -515,7 +527,7 @@ nav.scrolled .logo-superior {
 }
 
 .stat .d {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.92rem;
     color: var(--gray-text);
     line-height: 1.5;
@@ -576,30 +588,53 @@ nav.scrolled .logo-superior {
 .clients {
     max-width: 1240px;
     margin: 80px auto 0;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)
+}
+
+.clients-track {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
+    width: max-content;
+    gap: 90px;
+    animation: marquee 32s linear infinite
+}
+
+.clients:hover .clients-track {
+    animation-play-state: paused
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
 }
 
 .clients .cl {
+    flex: 0 0 auto;
     font-weight: 700;
     font-size: 1.9rem;
     color: #9aa0a8;
     letter-spacing: 1px;
-    transition: 0.4s;
+    white-space: nowrap;
+    transition: color .4s
 }
 
 .clients .cl.box {
     border: 3px solid #9aa0a8;
     border-radius: 6px;
     padding: 4px 14px;
-    font-size: 1.4rem;
+    font-size: 1.4rem
 }
 
 .clients .cl:hover {
-    color: var(--ink);
+    color: var(--ink)
 }
 
 /* ===== BANNER ===== */
@@ -691,25 +726,25 @@ nav.scrolled .logo-superior {
 /* ===== DIFERENCIALES ===== */
 .diff {
     background: linear-gradient(to top, #d7d7d738, #f2f2f2);
-    padding: 60px 64px 130px
+    padding: 60px 64px 130px;
 }
 
 .diff h2 {
     text-align: center;
     font-weight: 600;
     font-size: clamp(1.8rem, 3.6vw, 2.8rem);
-    margin-bottom: 90px
+    margin-bottom: 90px;
 }
 
-.diff-wrap { 
+.diff-wrap {
     margin: 0 auto;
-    position: relative
+    position: relative;
 }
 
 .diff-heads {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: end
+    align-items: start;         
 }
 
 .diff-head {
@@ -722,7 +757,7 @@ nav.scrolled .logo-superior {
 .diff-head .ic {
     width: 90px;
     height: 90px;
-    color: var(--navy)
+    color: var(--navy);
 }
 
 .diff-head .ic svg {
@@ -730,27 +765,36 @@ nav.scrolled .logo-superior {
     height: 100%;
     fill: none;
     stroke: var(--navy);
-    stroke-width: 1.6
+    stroke-width: 1.6;
 }
 
 .diff-head h4 {
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 1.1;
-    color: var(--ink)
+    color: var(--ink);
 }
 
 .diff-head.h2pos {
-    align-self: end;
-    justify-content: flex-start;
-    visibility: hidden
+    display: block;              
+    align-self: start;
+}
+
+.diff-head.h2pos .mid-top-text {
+    font-weight: 300;
+    font-size: .98rem;
+    line-height: 1.6;
+    color: var(--gray-text);
+    padding: 0 30px;
+    text-align: left;
+    margin: 0;
 }
 
 .diff-line {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 34px 0 0
+    margin: 34px 0 0;
 }
 
 .diff-line::before {
@@ -760,7 +804,7 @@ nav.scrolled .logo-superior {
     left: 15%;
     right: 15%;
     border-top: 2px dotted var(--gold);
-    z-index: 0
+    z-index: 0;
 }
 
 .diff-circle {
@@ -775,7 +819,7 @@ nav.scrolled .logo-superior {
     place-items: center;
     font-size: 1.6rem;
     font-weight: 500;
-    justify-self: center
+    justify-self: center;
 }
 
 .diff-bodies {
@@ -783,46 +827,54 @@ nav.scrolled .logo-superior {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    margin-top: 40px
+    margin-top: 40px;
 }
 
 .diff-body {
-    padding: 0 30px
+    padding: 0 30px;
 }
 
 .diff-body h5 {
     font-weight: 400;
     font-size: 1.5rem;
     margin-bottom: 18px;
-    color: var(--ink)
+    color: var(--ink);
+}
+
+.diff-body.mid h5 {
+    margin-bottom: 0;
+    text-align: center;
+    margin-left: -60px;
 }
 
 .diff-body .m-title {
-    display: none
+    display: none;
+}
+
+.diff-body.mid .mid-mobile-text {
+    display: none;
 }
 
 .diff-body p {
     font-weight: 300;
     font-size: .98rem;
     line-height: 1.6;
-    color: var(--gray-text)
+    color: var(--gray-text);
 }
 
-@media(max-width:767px) {
+@media(max-width:1100px) {
     .diff-heads {
-        display: none
+        display: none;
     }
 
-    /* turn the wrap into a 2-col timeline: numbers | content */
     .diff-wrap {
         display: grid;
         grid-template-columns: 52px 1fr;
         column-gap: 22px;
         max-width: 520px;
-        position: relative
+        position: relative;
     }
 
-    /* continuous dotted line down the numbers column */
     .diff-wrap::before {
         content: "";
         position: absolute;
@@ -831,93 +883,76 @@ nav.scrolled .logo-superior {
         bottom: 25%;
         border-left: 2px dotted var(--gold);
         transform: translateX(-1px);
-        z-index: 0
+        z-index: 0;
     }
-
-    /* circles column */
     .diff-line {
-        display: contents
+        display: contents;
     }
 
     .diff-line::before {
-        display: none
+        display: none;
     }
 
     .diff-circle {
         position: relative;
         width: 52px;
         height: 52px;
-        font-size: 1.02rem;;
+        font-size: 1.02rem;
         justify-self: center;
         align-self: start;
         z-index: 1;
         background: var(--gold);
-        border-radius: 50%
+        border-radius: 50%;
     }
 
     .diff-circle::after {
         font-size: 1.5rem;
         font-weight: 600;
-        color: #fff
+        color: #fff;
     }
 
-    .diff-circle:nth-of-type(1) {
-        grid-column: 1;
-        grid-row: 1
-    }
+    .diff-circle:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+    .diff-circle:nth-of-type(2) { grid-column: 1; grid-row: 2; }
+    .diff-circle:nth-of-type(3) { grid-column: 1; grid-row: 3; }
 
-    .diff-circle:nth-of-type(2) {
-        grid-column: 1;
-        grid-row: 2
-    }
-
-    .diff-circle:nth-of-type(3) {
-        grid-column: 1;
-        grid-row: 3
-    }
-
-    /* bodies column */
     .diff-bodies {
-        display: contents
+        display: contents;
+        margin-left: 0;
     }
 
     .diff-body {
         padding: 0;
-        margin-bottom: 46px
+        margin-bottom: 46px;
     }
 
-    .diff-body:nth-of-type(1) {
-        grid-column: 2;
-        grid-row: 1
-    }
-
-    .diff-body:nth-of-type(2) {
-        grid-column: 2;
-        grid-row: 2
-    }
-
-    .diff-body:nth-of-type(3) {
-        grid-column: 2;
-        grid-row: 3
-    }
+    .diff-body:nth-of-type(1) { grid-column: 2; grid-row: 1; }
+    .diff-body:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+    .diff-body:nth-of-type(3) { grid-column: 2; grid-row: 3; }
 
     .diff-body .m-title {
         display: block;
         font-weight: 600;
         font-size: 1.35rem;
         color: var(--ink);
-        margin-bottom: 14px
+        margin-bottom: 14px;
     }
 
     .diff-body.mid h5 {
         font-weight: 600;
         font-size: 1.35rem;
-        margin-bottom: 14px
+        margin-bottom: 14px;
+        text-align: left; 
+        margin-left: 0px;
     }
 
-    .diff-body p {
+    .diff-body.mid .mid-mobile-text {
+        display: block;
+    }
+
+    .diff-body p,
+    .diff-body.mid .mid-mobile-text {
         font-size: .92rem;
-        line-height: 1.55
+        line-height: 1.55;
     }
 }
 
@@ -1175,7 +1210,7 @@ nav.scrolled .logo-superior {
 }
 
 
-.pro .li img{
+.pro .li img {
     width: 24px;
 }
 
@@ -1208,18 +1243,19 @@ nav.scrolled .logo-superior {
         padding: 10px;
     }
 }
+
 @media(max-width:900px) {
     .pros-stage {
         padding: 0px 30px;
     }
-    
+
 }
 
 @media(max-width:1500px) {
     .pros-stage {
         padding: 0px 15px;
     }
-    
+
 }
 
 /* ===== CONTACT ===== */
@@ -1375,7 +1411,7 @@ footer {
 /* ===== RESPONSIVE GLOBAL ===== */
 @media (max-width: 1024px) {
     .hero-inner {
-        padding: 0 40px;
+        padding: 170px 40px;
     }
 
     .stats,
@@ -1396,7 +1432,7 @@ footer {
 
 @media (max-width: 640px) {
     .hero-inner {
-        padding: 0 24px;
+        padding: 170px 24px;
     }
 
     .stats {
