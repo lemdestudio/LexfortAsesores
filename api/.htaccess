@@ -1,0 +1,3 @@
+<Files "errores_correo.log">
+    Require all denied
+</Files>
