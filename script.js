@@ -101,7 +101,7 @@ gsap.utils.toArray(".rv").forEach((el) => {
 /* staggered groups */
 [
   [".stats-grid .stat", 0.12],
-  [".clients .cl", 0.08],
+  [".clients", 0.08],
   [".diff-bodies .diff-body", 0.14],
   [".diff-line .diff-circle", 0.16],
   [".pros-grid .pro", 0.18],
@@ -457,11 +457,12 @@ document
     btn.disabled = true;
     msg.textContent = "Enviando…";
     try {
-      const res = await fetch("mailservice.php", {
+      const res = await fetch("./api/mailservice.php", {
         method: "POST",
         body: new FormData(this),
       });
       const data = await res.json();
+ 
       if (data.ok) {
         msg.textContent = "¡Gracias! Tu mensaje fue enviado.";
         this.reset();
@@ -469,7 +470,8 @@ document
         msg.textContent =
           data.error || "No se pudo enviar. Inténtalo de nuevo.";
       }
-    } catch {
+    } catch (error){
+    console.error("Error real capturado:", error);
       msg.textContent = "Error de conexión. Inténtalo más tarde.";
     }
     btn.disabled = false;
