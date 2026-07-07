@@ -448,6 +448,92 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
   update();
 })();
 
+/* ===== TEAM MODAL ===== */
+(function () {
+  const openBtn = document.getElementById("teamModalOpen");
+  const modal = document.getElementById("equipo-lxf-modal");
+  const list = document.getElementById("teamModalList");
+  const track = document.getElementById("prosTrack");
+  if (!openBtn || !modal || !list || !track) return;
+
+  let built = false;
+  let previousFocus = null;
+  let previousOverflow = "";
+
+  function buildList() {
+    if (built) return;
+    Array.from(track.querySelectorAll(".pro")).forEach((pro) => {
+      const item = document.createElement("article");
+      item.className = "team-modal__item";
+
+      const photoWrap = document.createElement("div");
+      photoWrap.className = "team-modal__photo";
+      const photo = pro.querySelector(".photo img");
+      if (photo) photoWrap.appendChild(photo.cloneNode(true));
+
+      const content = document.createElement("div");
+      content.className = "team-modal__content";
+
+      const name = document.createElement("h3");
+      name.className = "team-modal__name";
+      name.textContent = pro.querySelector(".name-row h4")?.textContent || "";
+
+      const role = document.createElement("div");
+      role.className = "team-modal__role";
+      role.textContent = pro.querySelector(".role")?.textContent || "";
+
+      const meta = document.createElement("div");
+      meta.className = "team-modal__meta";
+      const sourceMeta = pro.querySelector(".meta");
+      if (sourceMeta) meta.innerHTML = sourceMeta.innerHTML;
+
+      const linkedin = pro.querySelector(".li a");
+      if (linkedin) {
+        const linkedInWrap = document.createElement("div");
+        linkedInWrap.className = "team-modal__linkedin";
+        linkedInWrap.appendChild(linkedin.cloneNode(true));
+        content.append(name, role, meta, linkedInWrap);
+      } else {
+        content.append(name, role, meta);
+      }
+
+      item.append(photoWrap, content);
+      list.appendChild(item);
+    });
+    built = true;
+  }
+
+  function openModal() {
+    buildList();
+    previousFocus = document.activeElement;
+    previousOverflow = document.body.style.overflow;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    modal.querySelector(".team-modal__close").focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = previousOverflow;
+    if (previousFocus) previousFocus.focus();
+  }
+
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  modal.querySelectorAll("[data-team-modal-close]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
+})();
+
 document
   .getElementById("contactForm")
   .addEventListener("submit", async function (e) {

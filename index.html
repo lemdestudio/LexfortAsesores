@@ -249,7 +249,10 @@
 
     <!-- PROFESSIONALS -->
     <section class="pros" id="profesionales">
-      <h2 class="rv">Equipo LXF</h2>
+      <div class="pros-head">
+        <h2 class="rv">Equipo LXF</h2>
+        <h3 class="pros-openmodal"><a href="#equipo-lxf-modal" id="teamModalOpen">VER TODO EL EQUIPO <span class="ar">→</span></a></h3>
+      </div>
       <div class="pros-stage">
         <span class="pros-arrow" id="prosPrev" aria-label="Anterior"
           >&#8249;</span
@@ -395,6 +398,25 @@
       </div>
       <div class="pros-dots" id="prosDots"></div>
     </section>
+
+    <div class="team-modal" id="equipo-lxf-modal" aria-hidden="true">
+      <div class="team-modal__backdrop" data-team-modal-close></div>
+      <div
+        class="team-modal__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="teamModalTitle"
+      >
+        <button class="team-modal__close" type="button" aria-label="Cerrar" data-team-modal-close>
+          ×
+        </button>
+        <div class="team-modal__head">
+          <h2 id="teamModalTitle">Equipo LXF</h2>
+          <div class="team-modal__line"></div>
+        </div>
+        <div class="team-modal__list" id="teamModalList"></div>
+      </div>
+    </div>
 
     <!-- CONTACT -->
     <section class="contact" id="contacto">
