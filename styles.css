@@ -609,8 +609,15 @@ nav.scrolled .logo-superior {
     margin: 80px auto 0;
     overflow: hidden;
     position: relative;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)
+}
+
+.clients.dragging {
+    cursor: grabbing;
 }
 
 .clients-track {
@@ -618,11 +625,7 @@ nav.scrolled .logo-superior {
     align-items: center;
     width: max-content;
     gap: 90px;
-    animation: marquee 32s linear infinite
-}
-
-.clients:hover .clients-track {
-    animation-play-state: paused
+    will-change: transform
 }
 
 @keyframes marquee {
@@ -1226,6 +1229,7 @@ nav.scrolled .logo-superior {
 }
 
 .pro .meta {
+    height: 170px;
     font-weight: 300;
     color: var(--gray-text);
     font-size: .98rem;
@@ -1490,10 +1494,23 @@ nav.scrolled .logo-superior {
 
 }
 
-@media (min-width: 760px) and (max-width: 900px) { 
-    .aemail{ 
-        overflow-wrap: break-word;
-    }
+@media (max-width: 500px) { 
+   .pro .meta {
+    font-size: 14px !important;
+   }
+}
+
+@media (max-width: 450px) { 
+   .pro .meta {
+    font-size: 13px !important;
+   }
+}
+
+@media (max-width: 430px) { 
+   .pro .meta {
+    font-size: 12px !important;
+    overflow-wrap: break-word;
+   }
 }
 /* ===== CONTACT ===== */
 .contact {

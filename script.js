@@ -345,8 +345,103 @@ document.querySelectorAll(".navlinks a,.hero-btn").forEach((a) => {
 (function () {
   const track = document.getElementById("clientsTrack");
   if (!track) return;
+  const wrap = track.closest(".clients");
+  if (!wrap) return;
   const originals = Array.from(track.children);
   originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+
+  let x = 0;
+  let loopWidth = 0;
+  let lastTime = null;
+  let dragging = false;
+  let hovering = false;
+  let lastPointerX = 0;
+  const DURATION = 32000;
+
+  function measure() {
+    loopWidth = track.scrollWidth / 2;
+  }
+
+  function normalize() {
+    if (!loopWidth) return;
+    while (x <= -loopWidth) x += loopWidth;
+    while (x > 0) x -= loopWidth;
+  }
+
+  function apply() {
+    track.style.transform = "translateX(" + x + "px)";
+  }
+
+  function tick(time) {
+    if (lastTime === null) lastTime = time;
+    const delta = time - lastTime;
+    lastTime = time;
+
+    if (!dragging && !hovering && loopWidth) {
+      x -= (loopWidth / DURATION) * delta;
+      normalize();
+      apply();
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  function startDrag(clientX) {
+    dragging = true;
+    lastPointerX = clientX;
+    wrap.classList.add("dragging");
+  }
+
+  function moveDrag(clientX) {
+    if (!dragging) return;
+    x += clientX - lastPointerX;
+    lastPointerX = clientX;
+    normalize();
+    apply();
+  }
+
+  function endDrag() {
+    dragging = false;
+    wrap.classList.remove("dragging");
+  }
+
+  measure();
+  apply();
+  requestAnimationFrame(tick);
+
+  window.addEventListener("resize", () => {
+    measure();
+    normalize();
+    apply();
+  });
+
+  wrap.addEventListener("mouseenter", () => {
+    hovering = true;
+  });
+
+  wrap.addEventListener("mouseleave", () => {
+    hovering = false;
+    endDrag();
+  });
+
+  wrap.addEventListener("pointerdown", (e) => {
+    if (e.button !== undefined && e.button !== 0) return;
+    wrap.setPointerCapture(e.pointerId);
+    startDrag(e.clientX);
+  });
+
+  wrap.addEventListener("pointermove", (e) => {
+    moveDrag(e.clientX);
+  });
+
+  wrap.addEventListener("pointerup", (e) => {
+    if (wrap.hasPointerCapture(e.pointerId)) {
+      wrap.releasePointerCapture(e.pointerId);
+    }
+    endDrag();
+  });
+
+  wrap.addEventListener("pointercancel", endDrag);
 })();
 
 /* ===== PROFESSIONALS CAROUSEL (independent of GSAP) ===== */
